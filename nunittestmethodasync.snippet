@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>NUnit Async Test Method</Title>
+      <Shortcut>ntestma</Shortcut>
+      <Description>Code snippet for an async test method for Nunit</Description>
+      <Author>Robert Hernandez</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>NUnit.Framework</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import>
+      </Imports>
+      <References>
+        <Reference>
+          <Assembly>nunit.framework.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>mscorlib.dll</Assembly>
+        </Reference>
+      </References>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Replace with the name of the test method</ToolTip>
+          <Default>MyTestMethod</Default>
+        </Literal>
+        <Literal Editable="false">
+          <ID>TestMethod</ID>
+          <Function>SimpleTypeName(global::NUnit.Framework.TestAttribute)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>ClassName</ID>
+          <ToolTip>Class name</ToolTip>
+          <Function>ClassName()</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[[$TestMethod$]
+      public async Task $ClassName$_$name$()
+      {
+          // Arrange $end$
+          
+          // Act
+          
+          // Assert
+      }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
